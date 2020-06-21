@@ -1,5 +1,5 @@
-from scrapy.contrib.linkextractors import LinkExtractor
-from scrapy.contrib.spiders import CrawlSpider, Rule
+from scrapy.linkextractors import LinkExtractor
+from scrapy.spiders import CrawlSpider, Rule
 from wikiSpider.items import Article
 
 class ArticleSpider(CrawlSpider):
@@ -11,6 +11,9 @@ class ArticleSpider(CrawlSpider):
     ]
 
     def parse_items(self, response):
+        '''extract the raw data, doing as little processing as possible, so that it can be 
+        passed to the pipeline'''
+        
         article = Article()
         article['url'] = response.url
         article['title'] = response.css('h1::text').extract_first()

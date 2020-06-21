@@ -1,0 +1,2 @@
+Scrapy Documentation - https://doc.scrapy.org/en/latest/news.html
+Book on Scrapy -  Learning Scrapy, by Dimitrios Kouzis-Loukas (O’Reilly)
